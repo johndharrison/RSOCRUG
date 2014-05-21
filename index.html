@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RSelenium - Introduction</title>
+  <meta charset="utf-8">
+  <meta name="description" content="RSelenium - Introduction">
+  <meta name="author" content="John Harrison (johndharrison0@gmail.com)">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+<link rel=stylesheet href="./assets/css/styles.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <aside class="gdbar">
+    <img src="assets/img/big-logo.png">
+  </aside>
+  <hgroup class="auto-fadein">
+    <h1>RSelenium - Introduction</h1>
+    <h2>Orange County R User Group</h2>
+    <p>John Harrison (johndharrison0@gmail.com)<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="class1" id="id1a" style="background:#E0F0FF;">
+  <hgroup>
+    <h2>John Harrison</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img style="float: right" src="https://dl.dropboxusercontent.com/u/38391057/2014-05-15%2010.23.30.jpg" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class1" id="id1" style="background:#E0F0FF;">
+  <hgroup>
+    <h2>What is Selenium?</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Selenium automates browsers. (<a href="http://docs.seleniumhq.org/">http://docs.seleniumhq.org/</a>)</li>
+<li>Selenium is a set of tools for cross-platform automated testing of web applications.</li>
+<li>Selenium supports
+
+<ul>
+<li>Chrome, Firefox, Safari, Internet Explorer, PhantomJS and others</li>
+<li>Windows, OS X, Linux, Android, iOS and other OS&#39;s</li>
+<li>Bindings in a number of languages (<a href="http://docs.seleniumhq.org/download/">http://docs.seleniumhq.org/download/</a>)</li>
+</ul></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id2" style="background:#E0F0FF;">
+  <hgroup>
+    <h2>Why a set of tools?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Selenium is actually composed of a number of projects (<a href="http://docs.seleniumhq.org/projects/">http://docs.seleniumhq.org/projects/</a>).</p>
+
+<ul>
+<li><img src="http://docs.seleniumhq.org/images/selenium-ide-logo.png" alt="alt text" title="Sel ide"> Selenium IDE </li>
+<li><img src="http://docs.seleniumhq.org/images/selenium-rc-logo.png" alt="alt text" title="sel rc"> Selenium Remote Control</li>
+<li><img src="http://docs.seleniumhq.org/images/selenium-logo.png" alt="alt text" title="sel WD"> Selenium WebDriver</li>
+<li><img src="http://docs.seleniumhq.org/images/selenium-grid-logo.png" alt="alt text" title="sel grid"> Selenium Grid</li>
+</ul>
+
+<p>Selenium WebDriver and Selenium Grid compose Selenium 2.0.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id3" style="background:#E0F0FF;">
+  <hgroup>
+    <h2>Selenium 2.0</h2>
+  </hgroup>
+  <article data-timings="">
+    <div id="container">
+  <table id="mytable">
+  <tr>
+   <td>RSelenium interacts with the WebDriver</td>
+   <td></td>
+  </tr>
+  <tr>
+   <td>The WebDriver "drives" the browsers.</td>
+       <td></td>
+  </tr>
+  <tr>
+   <td>The browsers have various bindings</td>
+       <td></td>
+  </tr>
+  <tr>
+   <td>Each browser may have bespoke methods</td>
+       <td></td>
+  </tr>
+  </table>
+  <div id="myimages">
+    <img src = 'https://dl.dropboxusercontent.com/u/38391057/RRSOCRUG/sel_diag1.png'  height="280"/>
+  </div>
+</div>
+
+<ul>
+<li>Firefox - The driver comes in the form of an xpi (firefox extension)</li>
+<li>Chrome - executable downloaded from the Chromium project </br>
+which acts as a bridge between &quot;chrome&quot; and the &quot;driver&quot;.</li>
+<li>IE - similar to chrome</li>
+<li>The SafariDriver is implemented as a Safari browser extension.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id4" style="background:#E0F0FF;">
+  <hgroup>
+    <h2>RSelenium</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Implements the JsonWireProtocol <a href="http://code.google.com/p/selenium/wiki/JsonWireProtocol">http://code.google.com/p/selenium/wiki/JsonWireProtocol</a><br></li>
+<li>Project page: <a href="https://github.com/johndharrison/RSelenium">https://github.com/johndharrison/RSelenium</a></li>
+<li>Issues: <a href="https://github.com/johndharrison/RSelenium/issues?state=open">https://github.com/johndharrison/RSelenium/issues?state=open</a></li>
+<li>CRAN: <a href="http://cran.r-project.org/web/packages/RSelenium/index.html">http://cran.r-project.org/web/packages/RSelenium/index.html</a></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id5" style="background:#E0F0FF;">
+  <hgroup>
+    <h2>Basic operation</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Browser initiation</li>
+<li>Navigation</li>
+<li>DOM interaction</li>
+<li>Frames and Windows</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id6" style="background:#E0F0FF;">
+  <hgroup>
+    <h2>Browser initiation</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r"># RSelenium::startServer()
+library(RSelenium)
+remDr &lt;- remoteDriver(browserName = &quot;someBrowser&quot;, remoteServerAddr = ip, port = port)
+remDr$open(silent = TRUE)
+remDr$navigate(&quot;http://somecoolsite&quot;)
+</code></pre>
+
+<table class="_GAbc _GASwb"><tbody><tr><th class="_GADO"></th><th class="_GAnH ">Browser</th><th class="_GALF">Sessions</th><th class="_GAoJ">% Sessions</th></tr><tr class="ID-row-0-0-0 ACTION-select TARGET-row-0 _GAipb"><td class="_GActb">1.</td><td class="_GApT"><div class="_GANu _GALpb">Chrome</div></td><td class="_GALF">135</td><td class="_GAoJ _GANGb"><div style="width:29.74576271186441%;" class="_GAyzb"></div>45.76%</td></tr><tr class="ID-row-1-0-0 ACTION-select TARGET-row-1 "><td class="_GActb">2.</td><td class="_GApT"><div class="_GANu _GALpb">Firefox</div></td><td class="_GALF">111</td><td class="_GAoJ _GANGb"><div style="width:24.45762711864407%;" class="_GAyzb"></div>37.63%</td></tr><tr class="ID-row-2-0-0 ACTION-select TARGET-row-2 _GAipb"><td class="_GActb">3.</td><td class="_GApT"><div class="_GANu _GALpb">Safari</div></td><td class="_GALF">29</td><td class="_GAoJ _GANGb"><div style="width:6.389830508474576%;" class="_GAyzb"></div>9.83%</td></tr><tr class="ID-row-3-0-0 ACTION-select TARGET-row-3 "><td class="_GActb">4.</td><td class="_GApT"><div class="_GANu _GALpb">Internet Explorer</div></td><td class="_GALF">12</td><td class="_GAoJ _GANGb"><div style="width:2.644067796610169%;" class="_GAyzb"></div>4.07%</td></tr><tr class="ID-row-4-0-0 ACTION-select TARGET-row-4 _GAipb"><td class="_GActb">5.</td><td class="_GApT"><div class="_GANu _GALpb">Opera</div></td><td class="_GALF">3</td><td class="_GAoJ _GANGb"><div style="width:0.6610169491525423%;" class="_GAyzb"></div>1.02%</td></tr><tr class="ID-row-5-0-0 ACTION-select TARGET-row-5 "><td class="_GActb">6.</td><td class="_GApT"><div class="_GANu _GALpb">Safari (in-app)</div></td><td class="_GALF">3</td><td class="_GAoJ _GANGb"><div style="width:0.6610169491525423%;" class="_GAyzb"></div>1.02%</td></tr><tr class="ID-row-6-0-0 ACTION-select TARGET-row-6 _GAipb"><td class="_GActb">7.</td><td class="_GApT"><div class="_GANu _GALpb">Android Browser</div></td><td class="_GALF">2</td><td class="_GAoJ _GANGb"><div style="width:0.4406779661016949%;" class="_GAyzb"></div>0.68%</td></tr></tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id7" style="background:#E0F0FF;">
+  <hgroup>
+    <h2>Navigation</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">remDr$Navigate(&quot;http://somewhere.com&quot;)
+remDr$goBack()
+remDr$goForward()
+remDr$refresh()
+remDr$getTitle()
+remDr$getCurrentUrl()
+remDr$getStatus()
+remDr$getAllCookies()
+remDr$deleteCookieNamed(&quot;PREF&quot;)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id8" style="background:#E0F0FF;">
+  <hgroup>
+    <h2>DOM interaction</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>RSelenium has a number of methods of finding elements in the document object model with two methods to search anchor elements (An anchor is a piece of text which marks the beginning and/or the end of a hypertext link.)</p>
+
+<ul>
+<li>By id</li>
+<li>By class</li>
+<li>By css selector</li>
+<li>By name</li>
+<li>By tag name</li>
+<li>By link text (anchor elements)</li>
+<li>By partial link text (anchor elements)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id9" style="background:#E0F0FF;">
+  <hgroup>
+    <h2>Frames and Windows</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">remDr$switchToFrame(&quot;string|number|null|WebElement&quot;)
+remDr$getWindowHandles()
+remDr$getCurrentWindowHandle()
+remDr$switchToWindow(&quot;windowId&quot;)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id10" style="background:#E0F0FF;">
+  <hgroup>
+    <h2>Advanced operation</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Javascript</li>
+<li>Interacting with shiny apps</li>
+<li>Remote driving</li>
+<li>External providers</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id11" style="background:#E0F0FF;">
+  <hgroup>
+    <h2>Javascript</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>d3Network Example
+<a href="https://github.com/christophergandrud/d3ShinyExample">https://github.com/christophergandrud/d3ShinyExample</a> . Neat package for
+creating interactive network graphs from R. All the power of d3.js without the pain.</li>
+</ul>
+
+<p><img src="https://dl.dropboxusercontent.com/u/38391057/Screenshot%202014-05-15%2022.20.09.png", width = 900, height = 400 /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id12" style="background:#E0F0FF;">
+  <hgroup>
+    <h2>Interacting with shiny apps</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>Dialect Map
+<a href="http://spark.rstudio.com/jkatz/SurveyMaps/">http://spark.rstudio.com/jkatz/SurveyMaps/</a>
+If I remember rightly this one went <a href="http://www.businessinsider.com/22-maps-that-show-the-deepest-linguistic-conflicts-in-america-2013-6?op=1">viral</a> was viewed 7 million times and crashed rstudios server.</p></li>
+<li><p>RSelenium test app
+Viewable at <a href="http://spark.rstudio.com/johnharrison/shinytestapp/">http://spark.rstudio.com/johnharrison/shinytestapp/</a> or can be ran from the Rselenium package locally.</p></li>
+</ul>
+
+<p><img src="https://dl.dropboxusercontent.com/u/38391057/RRSOCRUG/Screenshot%202014-05-16%2004.56.53.png", width = 900, height = 400 /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id13" style="background:#E0F0FF;">
+  <hgroup>
+    <h2>Remote driving</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>(<a href="http://johndharrison.blogspot.co.uk/2014/03/rstudioshiny-server-on-digital-ocean.html">http://johndharrison.blogspot.co.uk/2014/03/rstudioshiny-server-on-digital-ocean.html</a>)
+<img src="https://dl.dropboxusercontent.com/u/38391057/RRSOCRUG/Screenshot%202014-05-16%2006.08.20.png" , width = 900, height = 300 /></p>
+
+<pre><code>remDr &lt;- remoteDriver(remoteServerAddr = &quot;128.199.255.233&quot;, browserName = &#39;phantomjs&#39;)
+remDr$open()
+remDr$navigate(&quot;http://whatismyipaddress.com/&quot;)
+remDr$screenshot(display = TRUE)
+remDr$close(); remDr$closeServer()
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id14" style="background:#E0F0FF;">
+  <hgroup>
+    <h2>External providers</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>Sauce Labs - <a href="http://saucelabs.com/">http://saucelabs.com/</a></p>
+
+<pre><code>user &lt;- &quot;rselenium0&quot;
+pass &lt;- &quot;*******************************&quot;
+port &lt;- 80
+ip &lt;- paste0(user, &#39;:&#39;, pass, &quot;@ondemand.saucelabs.com&quot;)
+browser &lt;- &quot;firefox&quot;
+version &lt;- &quot;25&quot;
+platform &lt;- &quot;OS X 10.9&quot;
+extraCapabilities &lt;- list(name = &quot;Test RSelenium&quot;, username = user, accessKey = pass)
+
+remDr &lt;- remoteDriver$new(remoteServerAddr = ip, port = port, browserName = browser
+                      , version = version, platform = platform
+                      , extraCapabilities = extraCapabilities)
+</code></pre></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id14b" style="background:#E0F0FF;">
+  <hgroup>
+    <h2>External providers</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>Browser Stack - <a href="http://www.browserstack.com/">http://www.browserstack.com/</a></p>
+
+<pre><code>require(RSelenium)
+user &lt;- &quot;johnharrison&quot; 
+pass &lt;- &quot;******************&quot;
+port &lt;- 80
+ip &lt;- paste0(user, &#39;:&#39;, pass, &quot;@hub.browserstack.com&quot;)
+extraCapabilities &lt;- list(&quot;browser&quot; = &quot;IE&quot;,
+                      &quot;browser_version&quot; = &quot;7.0&quot;,
+                      &quot;os&quot; = &quot;Windows&quot;,
+                      &quot;os_version&quot; = &quot;XP&quot;,
+                      &quot;browserstack.debug&quot; = &quot;true&quot;)
+remDr &lt;- remoteDriver$new(remoteServerAddr = ip, port = port
+                      , extraCapabilities = extraCapabilities)
+</code></pre></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id15" style="background:#E0F0FF;">
+  <hgroup>
+    <h2>External example</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code>testAppScript &lt;- function(remDr){
+  remDr$open(); remDr$setImplicitWaitTimeout(2000)
+  remDr$navigate(&quot;http://spark.rstudio.com/johnharrison/shinytestapp/&quot;)
+  Sys.sleep(2)
+  webElems &lt;- remDr$findElements(&quot;css selector&quot;, &quot;#ctrlSelect span&quot;)
+  lapply(webElems, function(x){x$highlightElement()})
+  Sys.sleep(2)
+  appIds &lt;- c(&quot;summary&quot;, &quot;distPlot&quot;, &quot;ggPlot&quot;, &quot;dttable&quot;)
+  lapply(seq_along(webElems), function(x){
+    if(!webElems[[x]]$isElementSelected()[[1]]){
+      webElems[[x]]$clickElement()
+      # test for its output
+      out &lt;- remDr$findElement(&quot;id&quot;, appIds[x])
+      out$highlightElement()
+    }})
+  remDr$close()
+}
+testAppScript(remDr)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='John Harrison'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='What is Selenium?'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Why a set of tools?'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Selenium 2.0'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='RSelenium'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Basic operation'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Browser initiation'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Navigation'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='DOM interaction'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Frames and Windows'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Advanced operation'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Javascript'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Interacting with shiny apps'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Remote driving'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='External providers'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='External providers'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='External example'>
+         17
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
