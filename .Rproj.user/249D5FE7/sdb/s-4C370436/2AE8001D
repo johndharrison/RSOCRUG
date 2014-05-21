@@ -1,0 +1,17 @@
+{
+    "contents" : "# Advanced operation\n# Interacting with shiny apps\n# dialect map\nfprof <- getFirefoxProfile(\"firefoxProfiles/firebugprof/\", useBase = TRUE)\nremDr <- remoteDriver(extraCapabilities = fprof)\nremDr$open()\nremDr$navigate(\"http://spark.rstudio.com/jkatz/SurveyMaps/\")\nwebElem <- remDr$findElement(\"id\", \"qselect\")\nwebElem$highlightElement()\noptElems <- webElem$findChildElements(\"css selector\", \"option\")\noptElems[[120]]$clickElement()\noptElems[[50]]$clickElement()\n\nremDr$findElement(\"id\", \"pick3\")$clickElement()\ncityElems <- remDr$findElements(\"css selector\", \"#city>option\")\nlength(cityElems)\ncityElems[[501]]$clickElement()\ncityElems[[501]]$getElementAttribute(\"outerHTML\")\n\n# shinytestapp\nremDr$open()\nremDr$navigate(\"http://spark.rstudio.com/johnharrison/shinytestapp/\")\nwebElem <- remDr$findElement(\"id\", \"ctrlSelect1\")\n\nwebElem <- remDr$findElement(\"id\", \"ctrlSelect3\")\nwebElem$clickElement()",
+    "created" : 1400698335833.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "900392936",
+    "id" : "2AE8001D",
+    "lastKnownWriteTime" : 1400698346,
+    "path" : "~/git/RSOCRUG/R/Advanced-Interact.R",
+    "project_path" : "R/Advanced-Interact.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

@@ -1,0 +1,17 @@
+{
+    "contents" : "#  Basic operation\n# Navigation\n\nremDr <- remoteDriver(browserName = \"chrome\")\nremDr$open()\nremDr$close()\n\nremDr$open(silent = TRUE)\n# session Info \nremDr$sessionInfo\n\nremDr$navigate(\"http://www.bbc.co.uk\")\n\nremDr$navigate(\"http://www.google.com/ncr\")\n\n# go back\nremDr$goBack()\n\n# go forward\nremDr$goForward()\n\n# refresh the webpage\nremDr$refresh()\n\n# get title\nremDr$getTitle()[[1]]\n\n> remDr$goBack()\n> remDr$getTitle()[[1]]\n[1] \"BBC - Homepage\"\n\n# get current url\n> remDr$goForward()\n> remDr$getCurrentUrl()[[1]]\n[1] \"https://www.google.com/\"\n\n# Info on OS/ JAVA, selenium\nremDr$getStatus()\n\n# cookies\nremDr$getAllCookies()\n\n# delete cookie\n\n> remDr$deleteCookieNamed(\"PREF\")\n> remDr$getAllCookies()\n\n",
+    "created" : 1400698273320.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "298110627",
+    "id" : "A5791EE6",
+    "lastKnownWriteTime" : 1400698287,
+    "path" : "~/git/RSOCRUG/R/Basic-Navigation.R",
+    "project_path" : "R/Basic-Navigation.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

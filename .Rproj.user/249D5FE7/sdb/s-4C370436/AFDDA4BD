@@ -1,0 +1,17 @@
+{
+    "contents" : "# Advanced operation\n# javascript\n\n# Example from the d3Networks package\n# run in seperate R\nshiny::runGitHub('d3ShinyExample', 'christophergandrud', port = 5555, launch.browser = FALSE)\n\nremDr$navigate(\"http://127.0.0.1:5555/\")\njsonData <- remDr$executeScript(\"return JSON.stringify(links);\")[[1]]\nappData <- fromJSON(jsonData)\nsourceData <- lapply(appData, \"[[\", 'source')\nsapply(sourceData, names)\nlibrary(plyr)\nsourceDF <- ldply(sourceData, as.data.frame)\n\nhead(sourceDF)\n\n\n",
+    "created" : 1400698290857.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2892243267",
+    "id" : "AFDDA4BD",
+    "lastKnownWriteTime" : 1400698317,
+    "path" : "~/git/RSOCRUG/R/Advanced-Javascript.R",
+    "project_path" : "R/Advanced-Javascript.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

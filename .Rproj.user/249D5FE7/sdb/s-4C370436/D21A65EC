@@ -1,0 +1,17 @@
+{
+    "contents" : "#  Basic operation\n# Browser initiation\n# firstly make sure a selenium server is running\nrequire(RSelenium)\nRSelenium::startServer()\n\n# assign a browser\n\nremDr <- remoteDriver() # firefox\nremDr$open()\nremDr$navigate(\"http://www.google.com/ncr\")\nremDr$close()\n\n# chrome\n\nremDr <- remoteDriver(browserName = \"chrome\")\nremDr$open()\nremDr$navigate(\"http://www.cnn.com\")\nremDr$close()\n\n# internet explorer\n\nremDr <- remoteDriver(browserName = \"internet explorer\")\nremDr$open()\nremDr$navigate(\"http://www.bbc.co.uk\")\nremDr$close()\n\n# safari\n\nremDr <- remoteDriver(browserName = \"safari\")\nremDr$open()\nremDr$navigate(\"http://www.r-project.org\")\nremDr$close()\n\n# opera \n# java -jar -Dos.name=windows\nremDr <- remoteDriver(browserName = \"opera\"\n                      , extraCapabilities = list(\"opera.binary\" = \"C:\\\\Program Files\\\\Opera x64\\\\opera.exe\"))\nremDr$open()\nremDr$navigate(\"http://www.yahoo.com\")\nremDr$close()\n\n# phantomjs\n\nremDr <- remoteDriver(browserName = \"phantomjs\")\nremDr$open()\nremDr$navigate(\"http://phantomjs.org\")\nremDr$screenshot(display)\nremDr$close()\n",
+    "created" : 1400698254269.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2356719524",
+    "id" : "D21A65EC",
+    "lastKnownWriteTime" : 1400698270,
+    "path" : "~/git/RSOCRUG/R/Basic-InitBrowser.R",
+    "project_path" : "R/Basic-InitBrowser.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

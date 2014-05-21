@@ -1,0 +1,17 @@
+{
+    "contents" : "# Basic operations\n# Frames and Windows\n\nremDr$navigate(\"http://www.r-project.org\")\n\nframes <- remDr$findElements(\"css selector\", \"frame\")\n\nhtmlParse(remDr$getPageSource()[[1]])\n\nremDr$switchToFrame(\"logo\")\nhtmlParse(remDr$getPageSource()[[1]])\n\n# go back\nremDr$switchToFrame(NULL)\nframes <- remDr$findElements(\"css selector\", \"frame\")\nremDr$switchToFrame(frames[[2]])\n\n\n\n# open new window\n\n# get handles\n\nremDr$getWindowHandles()",
+    "created" : 1400698230155.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1429282324",
+    "id" : "72719BCF",
+    "lastKnownWriteTime" : 1400698250,
+    "path" : "~/git/RSOCRUG/R/Basic-Frames.R",
+    "project_path" : "R/Basic-Frames.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

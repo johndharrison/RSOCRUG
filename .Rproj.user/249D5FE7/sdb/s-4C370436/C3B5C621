@@ -1,0 +1,17 @@
+{
+    "contents" : "require(RSelenium)\nuser <- \"rselenium0\" # Your Sauce Labs username\npass <- \"e8fdf927-4c8e-4d6b-84a2-71a4838d85fb\" # Your Sauce Labs access key \nport <- 80\nip <- paste0(user, ':', pass, \"@ondemand.saucelabs.com\")\nrdBrowser <- \"chrome\"\nversion <- \"33\"\nplatform <- \"OS X 10.9\"\nextraCapabilities <- list(name = \"OCRUG RSelenium webinar\", username = user\n                          , accessKey = pass, tags = list(\"RSelenium-webinar\", \"OCRUG\"))\nremDr <- remoteDriver$new(remoteServerAddr = ip, port = port, browserName = rdBrowser\n                          , version = version, platform = platform\n                          , extraCapabilities = extraCapabilities)\n\n\ntestAppScript <- function(remDr){\n  remDr$open()\n  remDr$setImplicitWaitTimeout(2000) # wait for elements for 2 seconds\n  remDr$navigate(\"http://spark.rstudio.com/johnharrison/shinytestapp/\")\n  Sys.sleep(2)\n  # highlight the labels\n  webElems <- remDr$findElements(\"css selector\", \"#ctrlSelect span\")\n  lapply(webElems, function(x){x$highlightElement()})\n  Sys.sleep(2)\n  appIds <- c(\"summary\", \"distPlot\", \"ggPlot\", \"dttable\")\n  # Click each checkbox and check for its output\n  lapply(seq_along(webElems), function(x){\n    if(!webElems[[x]]$isElementSelected()[[1]]){\n      webElems[[x]]$clickElement()\n      # test for its output\n      out <- remDr$findElement(\"id\", appIds[x])\n      out$highlightElement()\n    }\n  })\n  \n  remDr$close()\n}\n\ntestAppScript(remDr)\n",
+    "created" : 1400698371980.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "788018802",
+    "id" : "C3B5C621",
+    "lastKnownWriteTime" : 1400698387,
+    "path" : "~/git/RSOCRUG/R/Advanced-External1.R",
+    "project_path" : "R/Advanced-External1.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

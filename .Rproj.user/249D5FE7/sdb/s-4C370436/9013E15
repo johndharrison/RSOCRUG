@@ -1,0 +1,17 @@
+{
+    "contents" : "osBrowser <- list(\"OS X 10.9\" = list(browser = list(\"safari\", \"firefox\")\n                                     , version = list('7', '28')),\n                  \"Windows 8\" = list(browser = list(\"chrome\", \"firefox\", \"internet explorer\")\n                                     , version = list('33', '28', '10')),\n                  \"Linux\" = list(browser = list(\"chrome\", \"firefox\", \"opera\")\n                                 , version = list('33', '28', '12'))\n)\nlapply(seq_along(osBrowser), function(x){\n  platform <- names(osBrowser)[x]\n  lapply(seq_along(osBrowser[[x]]$browser), function(y){\n    rdBrowser <- osBrowser[[x]]$browser[[y]]\n    version <- osBrowser[[x]]$version[[y]]\n    remDr <- remoteDriver$new(remoteServerAddr = ip, port = port, browserName = rdBrowser\n                              , version = version, platform = platform\n                              , extraCapabilities = extraCapabilities)\n    testAppScript(remDr, 10 , appURL)\n  })\n}) ",
+    "created" : 1400698401035.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1858939924",
+    "id" : "9013E15",
+    "lastKnownWriteTime" : 1400698409,
+    "path" : "~/git/RSOCRUG/R/Advanced-External2.R",
+    "project_path" : "R/Advanced-External2.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

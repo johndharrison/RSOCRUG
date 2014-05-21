@@ -1,0 +1,17 @@
+{
+    "contents" : "#  Basic operation\n#  DOM interaction\n\n# by name\nremDr$navigate(\"http://www.google.com/ncr\")\nwebElem0 <- remDr$findElement(\"name\", \"q\")\nwebElem0$getElementAttribute(\"outerHTML\")[[1]]\n\n# by id\n> webElem0$getElementAttribute(\"id\")[[1]]\n[1] \"gbqfq\"\nwebElem <- remDr$findElement(\"id\", \"gbqfq\")\n\n# by class\n> webElem0$getElementAttribute(\"class\")[[1]]\n[1] \"gbqfif\"\nwebElem <- remDr$findElement(\"class\", \"gbqfif\")\n\n# by css selector\nwebElem <- remDr$findElement(\"css selector\", \".gbqfif\")\nwebElem <- remDr$findElement(\"css selector\", \"#gbqfq\")\nwebElem <- remDr$findElement(\"css selector\", \"input.gbqfif\")\nwebElem <- remDr$findElement(\"css selector\", \"input#gbqfq\")\n\n# by tag name\nlength(remDr$findElements(\"tag name\", \"input\"))\n\n# by link text\n\n# get all the anchors\nanchorElements <- remDr$findElements(\"tag name\", \"a\")\nsapply(anchorElements, function(x){x$getElementText()[[1]]})\n\nadvertAnchor <- remDr$findElement(\"link text\", \"Advertising\")\nadvertAnchor$highlightElement()\n\n# partial link text\n\ngoogleAnchor <- remDr$findElement(\"partial link text\", \"oogle\")\ngoogleAnchor$highlightElement()\n\n# xpath\n\n\n",
+    "created" : 1400698186535.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "498454231",
+    "id" : "BA1063F5",
+    "lastKnownWriteTime" : 1400698226,
+    "path" : "~/git/RSOCRUG/R/Basic-DOM.R",
+    "project_path" : "R/Basic-DOM.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

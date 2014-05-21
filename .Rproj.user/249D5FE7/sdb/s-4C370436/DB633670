@@ -1,0 +1,17 @@
+{
+    "contents" : "# Advanced operation\n# remote driving\n\nremDr <- remoteDriver(remoteServerAddr = \"128.199.255.233\", port = 4444, browserName = 'phantomjs')\nremDr$open()\nremDr$navigate(\"http://whatismyipaddress.com/\")\nremDr$screenshot(display = TRUE)\nremDr$close(); remDr$closeServer()",
+    "created" : 1400698357891.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4209510811",
+    "id" : "DB633670",
+    "lastKnownWriteTime" : 1400698368,
+    "path" : "~/git/RSOCRUG/R/Advanced-remote.R",
+    "project_path" : "R/Advanced-remote.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
